@@ -177,30 +177,11 @@ type KemType string
 
 // KEM types defined by liboqs (see kem.h)
 const (
-	KemBike1L1        KemType = "BIKE1-L1"
-	KemBike1L3        KemType = "BIKE1-L3"
-	KemBike1L5        KemType = "BIKE1-L5"
-	KemBike2L1        KemType = "BIKE2-L1"
-	KemBike2L3        KemType = "BIKE2-L3"
-	KemBike2L5        KemType = "BIKE2-L5"
-	KemBike3L1        KemType = "BIKE3-L1"
-	KemBike3L3        KemType = "BIKE3-L3"
-	KemBike3L5        KemType = "BIKE3-L5"
-	KemFrodo640AES    KemType = "FrodoKEM-640-AES"
-	KemFrodo640Shake  KemType = "FrodoKEM-640-SHAKE"
-	KemFrodo976AES    KemType = "FrodoKEM-976-AES"
-	KemFrodo976Shake  KemType = "FrodoKEM-976-SHAKE"
-	KemFrodo1344AES   KemType = "FrodoKEM-1344-AES"
-	KemFrodo1344Shake KemType = "FrodoKEM-1344-SHAKE"
-	KemNewHope512     KemType = "NewHope-512-CCA-KEM"
-	KemNewHope1024    KemType = "NewHope-1024-CCA-KEM"
-	KemKyber512       KemType = "Kyber-512-CCA-KEM"
-	KemKyber768       KemType = "Kyber-768-CCA-KEM"
-	KemKyber1024      KemType = "Kyber-1024-CCA-KEM"
-	KemSidhP503       KemType = "Sidh-p503"
-	KemSidhP751       KemType = "Sidh-p751"
-	KemSikeP503       KemType = "Sike-p503"
-	KemSikeP751       KemType = "Sike-p751"
+	KemBike1L1   KemType = "BIKE1-L1"
+	KemBike1L3   KemType = "BIKE1-L3"
+	KemKyber512  KemType = "Kyber512"
+	KemKyber768  KemType = "Kyber768"
+	KemKyber1024 KemType = "Kyber1024"
 )
 
 var errAlreadyClosed = errors.New("already closed")
