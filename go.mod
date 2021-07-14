@@ -1,4 +1,4 @@
-module github.com/thales-e-security/goliboqs
+module github.com/dimisik/goliboqs
 
 go 1.12
 
