@@ -176,12 +176,81 @@ import (
 type KemType string
 
 // KEM types defined by liboqs (see kem.h)
+// [UPDATE] - Includes all supported OQS KEMs as of 07/2021 - Modifications to liboqs-supported KEM names/identifiers should be reflected here manually
 const (
-	KemBike1L1   KemType = "BIKE1-L1"
-	KemBike1L3   KemType = "BIKE1-L3"
-	KemKyber512  KemType = "Kyber512"
-	KemKyber768  KemType = "Kyber768"
-	KemKyber1024 KemType = "Kyber1024"
+	// BIKE KEM
+	OQS_KEM_alg_bike_l1 KemType = "BIKE1-L1"
+	OQS_KEM_alg_bike_l3 KemType = "BIKE1-L3"
+
+	// Classic-McEliece KEM
+	OQS_KEM_alg_classic_mceliece_348864   KemType = "Classic-McEliece-348864"
+	OQS_KEM_alg_classic_mceliece_348864f  KemType = "Classic-McEliece-348864f"
+	OQS_KEM_alg_classic_mceliece_460896   KemType = "Classic-McEliece-460896"
+	OQS_KEM_alg_classic_mceliece_460896f  KemType = "Classic-McEliece-460896f"
+	OQS_KEM_alg_classic_mceliece_6688128  KemType = "Classic-McEliece-6688128"
+	OQS_KEM_alg_classic_mceliece_6688128f KemType = "Classic-McEliece-6688128f"
+	OQS_KEM_alg_classic_mceliece_6960119  KemType = "Classic-McEliece-6960119"
+	OQS_KEM_alg_classic_mceliece_6960119f KemType = "Classic-McEliece-6960119f"
+	OQS_KEM_alg_classic_mceliece_8192128  KemType = "Classic-McEliece-8192128"
+	OQS_KEM_alg_classic_mceliece_8192128f KemType = "Classic-McEliece-8192128f"
+
+	// Hamming Quasi-Cyclic (HQC) KEM
+	OQS_KEM_alg_hqc_128 KemType = "HQC-128"
+	OQS_KEM_alg_hqc_192 KemType = "HQC-192"
+	OQS_KEM_alg_hqc_256 KemType = "HQC-256"
+
+	// Kyber KEM
+	OQS_KEM_alg_kyber_512      KemType = "Kyber512"
+	OQS_KEM_alg_kyber_768      KemType = "Kyber768"
+	OQS_KEM_alg_kyber_1024     KemType = "Kyber1024"
+	OQS_KEM_alg_kyber_512_90s  KemType = "Kyber512-90s"
+	OQS_KEM_alg_kyber_768_90s  KemType = "Kyber768-90s"
+	OQS_KEM_alg_kyber_1024_90s KemType = "Kyber1024-90s"
+
+	// NTRU KEM
+	OQS_KEM_alg_ntru_hps2048509      KemType = "NTRU-HPS-2048-509"
+	OQS_KEM_alg_ntru_hps2048677      KemType = "NTRU-HPS-2048-677"
+	OQS_KEM_alg_ntru_hps4096821      KemType = "NTRU-HPS-4096-821"
+	OQS_KEM_alg_ntru_hrss701         KemType = "NTRU-HRSS-701"
+	OQS_KEM_alg_ntruprime_ntrulpr653 KemType = "ntrulpr653"
+	OQS_KEM_alg_ntruprime_ntrulpr761 KemType = "ntrulpr761"
+	OQS_KEM_alg_ntruprime_ntrulpr857 KemType = "ntrulpr857"
+	OQS_KEM_alg_ntruprime_sntrup653  KemType = "sntrup653"
+	OQS_KEM_alg_ntruprime_sntrup761  KemType = "sntrup761"
+	OQS_KEM_alg_ntruprime_sntrup857  KemType = "sntrup857"
+
+	// Saber KEM
+	OQS_KEM_alg_saber_lightsaber KemType = "LightSaber-KEM"
+	OQS_KEM_alg_saber_saber      KemType = "Saber-KEM"
+	OQS_KEM_alg_saber_firesaber  KemType = "FireSaber-KEM"
+
+	// Frodo KEM
+	OQS_KEM_alg_frodokem_640_aes    KemType = "FrodoKEM-640-AES"
+	OQS_KEM_alg_frodokem_640_shake  KemType = "FrodoKEM-640-SHAKE"
+	OQS_KEM_alg_frodokem_976_aes    KemType = "FrodoKEM-976-AES"
+	OQS_KEM_alg_frodokem_976_shake  KemType = "FrodoKEM-976-SHAKE"
+	OQS_KEM_alg_frodokem_1344_aes   KemType = "FrodoKEM-1344-AES"
+	OQS_KEM_alg_frodokem_1344_shake KemType = "FrodoKEM-1344-SHAKE"
+
+	// SIDH KEM
+	OQS_KEM_alg_sidh_p434            KemType = "SIDH-p434"
+	OQS_KEM_alg_sidh_p434_compressed KemType = "SIDH-p434-compressed"
+	OQS_KEM_alg_sidh_p503            KemType = "SIDH-p503"
+	OQS_KEM_alg_sidh_p503_compressed KemType = "SIDH-p503-compressed"
+	OQS_KEM_alg_sidh_p610            KemType = "SIDH-p610"
+	OQS_KEM_alg_sidh_p610_compressed KemType = "SIDH-p610-compressed"
+	OQS_KEM_alg_sidh_p751            KemType = "SIDH-p751"
+	OQS_KEM_alg_sidh_p751_compressed KemType = "SIDH-p751-compressed"
+
+	// SIKE KEM
+	OQS_KEM_alg_sike_p434            KemType = "SIKE-p434"
+	OQS_KEM_alg_sike_p434_compressed KemType = "SIKE-p434-compressed"
+	OQS_KEM_alg_sike_p503            KemType = "SIKE-p503"
+	OQS_KEM_alg_sike_p503_compressed KemType = "SIKE-p503-compressed"
+	OQS_KEM_alg_sike_p610            KemType = "SIKE-p610"
+	OQS_KEM_alg_sike_p610_compressed KemType = "SIKE-p610-compressed"
+	OQS_KEM_alg_sike_p751            KemType = "SIKE-p751"
+	OQS_KEM_alg_sike_p751_compressed KemType = "SIKE-p751-compressed"
 )
 
 var errAlreadyClosed = errors.New("already closed")
